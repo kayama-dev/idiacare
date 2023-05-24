@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Update the system packages
+sudo yum update -y
+
+# Install the required packages
+sudo yum install -y httpd aws-cli wget unzip
+
+# Create a temporary directory to download and extract the files
+mkdir ~/temp_download
+
+# Download the zip file from S3 to the temporary directory
+aws s3 cp s3://idiacarenj/Idiacare_nj.zip ~/temp_download/ --region us-east-1
+
+# Extract the zip file in the temporary directory
+unzip ~/temp_download/Idiacare_nj.zip -d ~/temp_download/
+
+# Move the extracted files from the temporary directory to the /var/www/html directory
+sudo cp -R ~/temp_download/Idiacare/* /var/www/html/
+
+# Enable and start the Apache web server
+sudo systemctl enable httpd
+sudo systemctl start httpd
