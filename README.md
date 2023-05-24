@@ -1,0 +1,2 @@
+# idiacare
+Bashscript for Idiacare
