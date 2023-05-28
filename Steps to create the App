@@ -1,0 +1,17 @@
+Steps
+1. Create 3 tier VPC
+2. Create and Attach Internet Gateway 
+3. Create public Subnets
+4. Create and Associate Public Route Table
+5. Create Private Subnet
+6. Create and Associate Nat  Gateways
+7. Create private Route Tables
+8. Create Security Groups
+9. Create S3 bucket and upload application code
+10. Create IAM role
+11. Create Webservers/EC2
+12. Set up ALB
+13. Acquire domain and create record in Route 53
+14. Request SSL Certificate
+15. Edit listener port in Application Load Balancer
+16.  Terminate webservers and create Auto Scaling Groups
